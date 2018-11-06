@@ -6,39 +6,21 @@ let DataLoader = function(){
     this._total = 0;
     this._visual_count = 0;
     this.isloading = false;
-    this.loadendcallback = null;
+    this._loadendcallback = null;
+    this._loadingcallback = null;
     this.init = function(){
         this.assets.length = 0;
         this._count = 0;
         this._total = 0;
         this._visual_count = 0;
         this.isloading = false;
-        this.loadendcallback = null;
+        this._loadendcallback = null;
+        this._loadingcallback= null;
     }
 
-    this.addSpine = function(flie_path){
+    this.addRes = function(flie_path,_type = cc.RawAsset){
         this.assets.push({
-            type: sp.SkeletonData,
-            path: flie_path
-        });
-    }
-
-    this.addSpriteFrame = function(flie_path){
-        this.assets.push({
-            type: cc.SpriteFrame,
-            path: flie_path
-        });
-    }
-
-    this.addSpriteAtlas = function(flie_path){
-        this.assets.push({
-            type: cc.SpriteAtlas,
-            path: flie_path
-        });
-    }
-    this.addRes = function(flie_path){
-        this.assets.push({
-            type: cc.RawAsset,
+            type: _type,
             path: flie_path
         });
     }
@@ -50,9 +32,12 @@ let DataLoader = function(){
         });
     }
     
-
-    this.load = function(callback){
+    this.begin = function(){
         let self = this;
+        if(self.isloading){
+            cc.error("cc.dataloader is loading");
+            return;
+        }
         self._count = 0;
         self.isloading = true;
         self._total = self.assets.length;
@@ -60,12 +45,16 @@ let DataLoader = function(){
             if("dir" in asset){
                 cc.loader.loadResDir(asset.path,asset.type, function (err, assets, urls) {
                     self._count++;
-                    callback(self._count*1.0/self._total,self._count,self._total);
+                    if(self._loadingcallback){
+                        self._loadingcallback(self._count*1.0/self._total,self._count,self._total);
+                    }
                 });
             }else{
                 cc.loader.loadRes(asset.path,asset.type,function(error,file){
                     self._count++;
-                    callback(self._count*1.0/self._total,self._count,self._total);
+                    if(self._loadingcallback){
+                        self._loadingcallback(self._count*1.0/self._total,self._count,self._total);
+                    }
                 });
             }
         }
@@ -74,31 +63,36 @@ let DataLoader = function(){
     /**
      * 
      * @param  dt 
-     * @param  duration  进度总时间
+     * @param {number} duration  进度总时间
      * @return 返回的是 进度 progress
      */
-    this.update = function(dt,duration = 5){
+    this.step = function(dt,duration = 5){
          
         if(this.isloading){
             
             let unit = duration / dt;
             let rdt = this._total/unit;
 
+            // cc.log('_visual_count: %s,dt: %s,rdt: %s,_count: %s',this._visual_count,dt,rdt,this._count);
             this._visual_count += rdt;
             this._visual_count = Math.min(this._visual_count, this._count);
             
-            if(this._visual_count >= this._total && this.loadendcallback != null){
+            
+            if(this._visual_count >= this._total && this._loadendcallback != null){
                 this.isloading = false;
-                this.loadendcallback();
-                this.loadendcallback = null;
+                this._loadendcallback();
+                this._loadendcallback = null;
             }
         }
         let progress = this._visual_count*1.0/this._total;  
         return progress;
     }
 
-    this.setLoadEndCallback = function(callback){
-        this.loadendcallback = callback;
+    this.loadingCallback = function(callback){
+        this._loadingcallback = callback;
+    }
+    this.endLoadCallback = function(callback){
+        this._loadendcallback = callback;
     }
 };
 
