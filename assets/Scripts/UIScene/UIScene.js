@@ -23,6 +23,8 @@ cc.Class({
         
         cc.uiManager.register("TestLayout3","prefabs/TestLayout3");
         
+
+        
     },
     onKeyUp: function(event){
         if(event.keyCode == cc.KEY.e){
@@ -30,6 +32,15 @@ cc.Class({
             let val = this.arr.random();
             cc.log('UIScene->array random %d',val);
             cc.uiManager.ShowUI("TestLayout1");
+        }else{
+            cc.log('UIScene-> ------------------------------');
+                
+            cc.log('UIScene-> cc.randomFloat(1) random----:%s',cc.randomFloat(1));
+            cc.log('UIScene-> cc.randomFloat(5) random----:%s',cc.randomFloat(5));
+            cc.log('UIScene-> cc.randomFloat(5,20) random----:%s',cc.randomFloat(5,20));
+            cc.log('UIScene-> cc.randomInt(5) random----:%s',cc.randomInt(5));
+            cc.log('UIScene-> cc.randomInt(5,20) random----:%s',cc.randomInt(5,20));
+            cc.log('UIScene-> cc.randomInt(-10,16) random----:%s',cc.randomInt(-10,16));        
         }
     },
     onKeyBack :function(){

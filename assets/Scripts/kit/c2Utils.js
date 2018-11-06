@@ -5,18 +5,7 @@ String.prototype.startWith = function(compareStr){
 };
 var c2Utils = {
     
-    randomBool: function(){
-    	var value = Math.random();
-    	return value > 0.5;
-    },
-      /** 生成0-num的随机数 */
-    random:function(num){
-        return parseInt(Math.random()*num+1,10); 
-    },
-    /** 生成min-max，包含min,max 的整数*/
-    random:function(min,max){
-        return parseInt(Math.random()*(max-min+1)+min,10); 
-    },
+   
     //获取对象类型
     isType: function(obj){
         var type = Object.prototype.toString.call(obj);

@@ -7,7 +7,7 @@
  * @param res   资源字符串
  * @param cb    回调函数返回
  */
-cc.createPrefab = function(res, cb) {
+cc.createPrefab = function (res, cb) {
     cc.loader.loadRes(res, cc.Prefab, (error, prefab) => {
         let node = null;
         if (error) {
@@ -15,11 +15,11 @@ cc.createPrefab = function(res, cb) {
         } else {
             node = cc.instantiate(prefab);
         }
-        
+
         if (cb) {
             cb(error, node);
         }
-    });  
+    });
 }
 
 /**
@@ -28,7 +28,7 @@ cc.createPrefab = function(res, cb) {
  * @param res
  * @param cb
  */
-cc.Component.prototype.createNode = function(sender, res, cb) {
+cc.Component.prototype.createNode = function (sender, res, cb) {
     cc.log(`createNode ${res}`);
     cc.createPrefab(res, (error, node) => {
         if (sender instanceof cc.Node) {
@@ -36,7 +36,7 @@ cc.Component.prototype.createNode = function(sender, res, cb) {
         } else if (this.node && this.node instanceof cc.Node) {
             this.node.addChild(node, 0);
         }
-        
+
         if (cb) {
             cb(node);
         }
@@ -46,7 +46,7 @@ cc.Component.prototype.createNode = function(sender, res, cb) {
 /**
  * 删除组件上的节点
  */
-cc.Component.prototype.destroyNode = function() {
+cc.Component.prototype.destroyNode = function () {
     if (!this.node) {
         return;
     }
@@ -69,7 +69,7 @@ cc.Node.prototype.hasComponent = function (types) {
  * 获取精灵上的纹理文件名
  * @returns {*}
  */
-cc.Sprite.prototype.getTextureFilename = function() {
+cc.Sprite.prototype.getTextureFilename = function () {
     if (this.spriteFrame) {
         let fileName = this.spriteFrame._textureFilename;
         const index = fileName.indexOf('resources/');
@@ -99,9 +99,30 @@ cc.createNodeComponent = function (componentType) {
     return component;
 };
 
-cc.setEnumAttr = function(obj, propName, enumDef) {
+cc.setEnumAttr = function (obj, propName, enumDef) {
     cc.Class.attr(obj, propName, {
         type: 'Enum',
         enumList: cc.Enum.getList(enumDef)
     });
+};
+
+
+cc.randomBool = function(){
+    var value = Math.random();
+    return value > 0.5;
+};
+cc.randomInt = function (min, max = -1) {
+    if (max == -1) { 
+        return parseInt(Math.random() * min + 1, 10);
+
+    } else {
+        return parseInt(Math.random() * (max - min + 1) + min, 10);
+    }
+};
+cc.randomFloat = function (min, max = -1) {
+    if (max == -1) { 
+        return Math.random() * min;
+    } else {
+        return Math.random() * (max - min + 1) + min;
+    }
 };
