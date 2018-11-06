@@ -1,0 +1,42 @@
+{
+  "XiaoMing": {
+    "age": 13,
+    "family": [
+      "papa","mam","grandpa","grandma"
+    ],
+    "friend": [
+      "XiaoHong","LiLei"
+    ],
+    "hasPet": "false"
+  },
+  "XiaoHong": {
+    "age": 12,
+    "family": [
+      "papa","mam","sister","grandpa"
+    ],
+    "friend": [
+      "XiaoMing","HanMeimei"
+    ],
+    "hasPet": "false"
+  },
+  "LiLei": {
+    "age": 16,
+    "family": [
+      "papa","mam","sister"
+    ],
+    "friend": [
+      "HanMeimei","XiaoMing"
+    ],
+    "hasPet": "true"
+  },
+  "HanMeimei": {
+    "age": 16,
+    "family": [
+      "papa","mam","brother"
+    ],
+    "friend": [
+      "LiLei","XiaoHong"
+    ],
+    "hasPet": "false"
+  }
+}
