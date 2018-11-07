@@ -1,6 +1,7 @@
 
 var audiomanager = {
 
+    _bIsInit : false,
     init: function () {
         this._playMusic = {
             id: -1,
@@ -14,13 +15,33 @@ var audiomanager = {
         this._musicVolume = 1; // 音乐音量
 
         // 获取本地设置音量大小
-        var audioSetting = JSON.parse(cc.sys.localStorage.getItem("audio"));
-        this._effectVolume = audioSetting["effect"] || 1;
-        this._musicVolume = audioSetting["music"] || 1;
+        let _audiosetting = cc.sys.localStorage.getItem("audio");
+        if(_audiosetting){
+            var audioSetting = JSON.parse(_audiosetting);
+            this._effectVolume = audioSetting["effect"];
+            this._musicVolume = audioSetting["music"];    
+        }
 
         //获取本地开关设置
-        var switchSetting = JSON.parse(cc.sys.localStorage.getItem("audioSwitch"));
-        this.initSwitch(switchSetting["switchMusic"], switchSetting["switchEffect"]);
+        let _switchsetting = cc.sys.localStorage.getItem("audioSwitch");
+        if(_switchsetting){
+            var switchSetting = JSON.parse(_switchsetting);
+            this.initSwitch(switchSetting["switchMusic"], switchSetting["switchEffect"]);
+        }else{
+            this._switchMusic = true; // 音乐开关
+            this._switchEffect = true; // 音效开关
+        }
+    }, 
+
+    //实例
+    _getInstance: function(){
+        
+        if(!this._bIsInit){
+            this._bIsInit = true; 
+            this.init();
+        }
+
+        return this;
     },
 
     /**
@@ -295,4 +316,4 @@ var audiomanager = {
     },
 }
 
-module.exports = cc.audiomanager = audiomanager;
+cc.audiomanager = audiomanager._getInstance();
