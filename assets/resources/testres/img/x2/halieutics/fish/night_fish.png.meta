@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "30d9539c-084a-4d97-b439-04fcbf48dc2d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "night_fish": {
+      "ver": "1.0.3",
+      "uuid": "74334abd-15b2-4fe3-bea1-ba4059fa016c",
+      "rawTextureUuid": "30d9539c-084a-4d97-b439-04fcbf48dc2d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 147,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 2046,
+      "height": 730,
+      "rawWidth": 2048,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

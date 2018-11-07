@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "18717ced-a1f4-408b-b630-e1f64ff866f9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "tank_fishing_click2_5": {
+      "ver": "1.0.3",
+      "uuid": "d2d2667b-784b-495e-9176-912b6c491302",
+      "rawTextureUuid": "18717ced-a1f4-408b-b630-e1f64ff866f9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -2,
+      "offsetY": 12.5,
+      "trimX": 12,
+      "trimY": 57,
+      "width": 251,
+      "height": 239,
+      "rawWidth": 279,
+      "rawHeight": 378,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

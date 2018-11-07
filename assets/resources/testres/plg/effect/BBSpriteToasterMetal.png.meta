@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "5a394b3e-587b-47ec-b2f8-9f80cd488c27",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "BBSpriteToasterMetal": {
+      "ver": "1.0.3",
+      "uuid": "95efb078-0654-498b-995e-251cc4e47123",
+      "rawTextureUuid": "5a394b3e-587b-47ec-b2f8-9f80cd488c27",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 512,
+      "height": 512,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

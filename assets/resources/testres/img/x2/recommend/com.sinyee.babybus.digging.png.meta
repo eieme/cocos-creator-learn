@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "a9c668d3-b889-4a1f-9148-fe32df70c90c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "com.sinyee.babybus.digging": {
+      "ver": "1.0.3",
+      "uuid": "4a5c578e-3d41-4b3d-84bd-1db5093acb62",
+      "rawTextureUuid": "a9c668d3-b889-4a1f-9148-fe32df70c90c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 256,
+      "height": 256,
+      "rawWidth": 256,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

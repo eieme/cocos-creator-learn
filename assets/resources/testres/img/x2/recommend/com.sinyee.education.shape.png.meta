@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "3bdb6094-d8c8-42c7-b8fe-28fde3a9d3f8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "com.sinyee.education.shape": {
+      "ver": "1.0.3",
+      "uuid": "d1ab07c3-a1c6-411a-8887-f07061dd38de",
+      "rawTextureUuid": "3bdb6094-d8c8-42c7-b8fe-28fde3a9d3f8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 256,
+      "height": 256,
+      "rawWidth": 256,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

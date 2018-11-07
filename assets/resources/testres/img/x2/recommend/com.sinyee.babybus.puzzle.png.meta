@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "423bda1b-74dd-4475-9421-7e3a37e0af0c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "com.sinyee.babybus.puzzle": {
+      "ver": "1.0.3",
+      "uuid": "8834ece5-b427-4c0b-9e91-a46d1cf40af0",
+      "rawTextureUuid": "423bda1b-74dd-4475-9421-7e3a37e0af0c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 256,
+      "height": 256,
+      "rawWidth": 256,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

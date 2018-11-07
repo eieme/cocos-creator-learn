@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "d993bddc-3dbe-464b-aa28-a34d7fc7df34",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "fishing_qiqi_big": {
+      "ver": "1.0.3",
+      "uuid": "308df4a5-a4a3-4747-8cfd-e4d20f681de2",
+      "rawTextureUuid": "d993bddc-3dbe-464b-aa28-a34d7fc7df34",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 190,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 2046,
+      "height": 644,
+      "rawWidth": 2048,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

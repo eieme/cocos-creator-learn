@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "dc55340b-f7ad-4415-b16c-0f51fbca5f66",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "margaritana4": {
+      "ver": "1.0.3",
+      "uuid": "e86e0278-27fb-4137-9bff-af4fb788f7b1",
+      "rawTextureUuid": "dc55340b-f7ad-4415-b16c-0f51fbca5f66",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -3.5,
+      "offsetY": -17,
+      "trimX": 0,
+      "trimY": 34,
+      "width": 84,
+      "height": 62,
+      "rawWidth": 91,
+      "rawHeight": 96,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

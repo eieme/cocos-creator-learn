@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "f570f6b0-cc21-40ed-a8e1-1eb9d95f1737",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "night_miaomiao_big": {
+      "ver": "1.0.3",
+      "uuid": "8497a483-aebc-4ed5-b482-227cb7ba5e25",
+      "rawTextureUuid": "f570f6b0-cc21-40ed-a8e1-1eb9d95f1737",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": 189.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 2045,
+      "height": 645,
+      "rawWidth": 2048,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

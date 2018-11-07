@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "61db02ec-21e3-41c5-89f2-322c2e5e9e29",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "anglerfish": {
+      "ver": "1.0.3",
+      "uuid": "213cedd5-fc36-49f6-baac-28ec07cbc55b",
+      "rawTextureUuid": "61db02ec-21e3-41c5-89f2-322c2e5e9e29",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": 1,
+      "trimX": 1,
+      "trimY": 5,
+      "width": 240,
+      "height": 106,
+      "rawWidth": 245,
+      "rawHeight": 118,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

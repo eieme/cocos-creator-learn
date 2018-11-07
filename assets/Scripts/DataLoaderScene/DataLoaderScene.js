@@ -1,4 +1,5 @@
 
+let DataManagerAgent = require('DataManagerAgent');
 cc.Class({
     extends: cc.Component,
 
@@ -25,25 +26,38 @@ cc.Class({
     // onLoad () {},
 
     start () { 
+        
         uikiller.bind(this);
-        for (let i = 1; i < 111; i++) {
-            cc.dataloader.addRes("mmpic/xinyan1809"+i,cc.SpriteFrame);
-            
-        }  
+        cc.dataloader.addDir("testres/img/x2/Stimulate/angling",cc.SpriteFrame);
+        cc.dataloader.addRes("testres/img/x2/Stimulate/BackgroundLightEfficiency1",cc.SpriteFrame);
+        cc.dataloader.addRes("testres/img/x2/Stimulate/BackgroundLightEfficiency2",cc.SpriteFrame);
+        cc.dataloader.addRes("testres/img/x2/Stimulate/Stage",cc.SpriteFrame);
+        cc.dataloader.addRes("testres/img/x2/Stimulate/trumpet1",cc.SpriteFrame);
+        cc.dataloader.addRes("testres/img/x2/Stimulate/trumpet2",cc.SpriteFrame);
+        cc.dataloader.addData("Data/demo");      
+        cc.dataloader.addData("Data/material");    
+        cc.dataloader.addData("Data/achievement");      
+             
 
-        cc.dataloader.loadingCallback(function(progress,count,total){
-            cc.log('time-> %s   progress:%s, count:%s, total:%s',new Date().toLocaleTimeString(), progress,count,total);  
-            // this._ProgressBar.$ProgressBar.progress = progress;   
+        cc.dataloader.loadingCallback(function(args){
+            cc.log('time-> %s   progress:%s, count:%s, total:%s',new Date().toLocaleTimeString(), args.progress,args.count,args.total);  
+            // this._ProgressBar.$ProgressBar.progress = args.progress;
+            cc.log('DataLoaderScene-> %s',JSON.stringify(args.asset));
         }.bind(this));       
 
         cc.dataloader.endLoadCallback(function(){
             cc.log('load end');
+            cc.datamanager.getDatas();
         }.bind(this));
+
+        
+        cc.datamanager.setAgent(new DataManagerAgent());
+        cc.dataloader.dataTableLoadEndCallback(cc.datamanager.readData.bind(cc.datamanager));
     },
 
 
     update (dt) {
-      let progress = cc.dataloader.step(dt,10);
+      let progress = cc.dataloader.step(dt,3);//第二个参数是总时间
       this._ProgressBar.$ProgressBar.progress = progress;    
     },
 
