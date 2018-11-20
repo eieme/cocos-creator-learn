@@ -26,6 +26,9 @@ cc.Class({
 
         
     },
+    update: function(dt){
+        cc.keybord.onCheckDurationKeys(this.onKeyDuration,this);
+    },
     onKeyUp: function(event){
         if(event.keyCode == cc.KEY.e){
             cc.log('UIScene-> keyCode e ');
@@ -90,6 +93,26 @@ cc.Class({
         cc.uiManager.showToast("_onClose3TouchEnd");
         cc.uiManager.CloseUI("TestLayout3");
     },
-    
-    // update (dt) {},
+    onKeyDuration: function(keyCode){
+        let self = this;
+        switch(keyCode){
+            case cc.KEY.w:
+            cc.log('UIScene->onKeyDuration Key.W');
+            
+            break;
+
+            case cc.KEY.s:
+            cc.log('UIScene->onKeyDuration Key.S');
+            break;
+            
+            case cc.KEY.a:
+            cc.log('UIScene->onKeyDuration Key.A');
+            break;
+
+            case cc.KEY.d:
+            cc.log('UIScene->onKeyDuration Key.D');
+            break;            
+        }
+        
+    },
 });
