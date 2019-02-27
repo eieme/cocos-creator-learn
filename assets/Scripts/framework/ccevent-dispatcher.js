@@ -30,7 +30,10 @@ var EventDispatcher = function(){
 		// 事件错误提示
 		this.m_cberr = "event callback function is null!";
 	// }
-
+    this.init = function(){
+        cc.log('ccevent-dispatcher-> init');
+        
+    },
 	/** 注册事件处理函数
 	 * @evnetId {any} 事件序号， 任何值
 	 * @cb {function} 事件处理函数， 不能为空
@@ -180,6 +183,7 @@ EventDispatcher.instance = null;
 EventDispatcher._getInstance = function () {
     if (EventDispatcher.instance === null) {
         EventDispatcher.instance = new EventDispatcher();
+        EventDispatcher.instance.init();
     }
     return EventDispatcher.instance;
 };

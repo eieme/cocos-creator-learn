@@ -23,12 +23,6 @@ let DataManagerAgent = function(){
         }
     }
 
-    this.getDatas = function(){
-        cc.log('DataManagerAgent-> %s',JSON.stringify(this.datas));        
-    }
-
-
-
 };
 
 module.exports = DataManagerAgent; 

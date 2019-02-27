@@ -37,22 +37,10 @@ cc.Class({
         cc.dataloader.addData("Data/demo");      
         cc.dataloader.addData("Data/material");    
         cc.dataloader.addData("Data/achievement");      
-             
 
-        cc.dataloader.loadingCallback(function(args){
-            cc.log('time-> %s   progress:%s, count:%s, total:%s',new Date().toLocaleTimeString(), args.progress,args.count,args.total);  
-            // this._ProgressBar.$ProgressBar.progress = args.progress;
-            cc.log('DataLoaderScene-> %s',JSON.stringify(args.asset));
-        }.bind(this));       
-
-        cc.dataloader.endLoadCallback(function(){
-            cc.log('load end');
-            cc.datamanager.getDatas();
-        }.bind(this));
-
+        cc.dataloader.setDataLoadEndCallback(cc.datamanager.readData.bind(cc.datamanager));
         
         cc.datamanager.setAgent(new DataManagerAgent());
-        cc.dataloader.dataTableLoadEndCallback(cc.datamanager.readData.bind(cc.datamanager));
     },
 
 
@@ -62,6 +50,17 @@ cc.Class({
     },
 
     _onBtnStartTouchEnd: function(){
-        cc.dataloader.begin();
+        cc.dataloader.begin(this.progressCallback.bind(this),this.completeCallback.bind(this));
+    },
+    progressCallback: function(args){
+        cc.log('time-> %s   progress:%s, count:%s, total:%s',new Date().toLocaleTimeString(), args.progress,args.count,args.total);  
+        // this._ProgressBar.$ProgressBar.progress = args.progress;
+        cc.log('DataLoaderScene-> %s',JSON.stringify(args.asset));
+
+    },
+
+    completeCallback: function(){
+        cc.log('load end');
+        cc.datamanager.getDatas();
     },
 });

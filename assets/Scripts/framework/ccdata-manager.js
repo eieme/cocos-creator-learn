@@ -5,7 +5,7 @@ let DataManager = function(){
     this.sorttables = {};
 
     this.init = function(){
-
+        cc.log('ccdata-manager-> init');
     }
 
     this.setAgent = function(agent){
@@ -38,6 +38,10 @@ let DataManager = function(){
             return this.datas[filename];
         }
         return null;
+    }
+
+    this.getDatas = function(){
+        cc.log('ccdata-manager-> %s',JSON.stringify(this.datas));
     }
 
     //为排序获取数据表
