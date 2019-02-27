@@ -55,7 +55,7 @@ let DataManager = function(){
 
     /**
      * @todo 建立索引,通过键值得到的对象是索引值
-     * @param 最少3个参数
+     * @param 最少3个参数 1：文件，2：map，3~n ：key
      */
     this.createIndex4Value = function(){
         if(arguments < 3){
@@ -102,7 +102,11 @@ let DataManager = function(){
         }
     };
     
-    //建立索引，通过键值得到的对象是 索引组
+    
+     /**
+     * @todo 建立索引，通过键值得到的对象是 索引组
+     * @param 最少3个参数 1：文件，2：map，3~n ：key
+     */
     this.createIndex4Array = function(){
         if(arguments < 3){
             cc.error("arguments must >= 3");
