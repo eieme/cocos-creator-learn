@@ -39,7 +39,7 @@ var EventDispatcher = function(){
 	 * @cb {function} 事件处理函数， 不能为空
 	 * @desc {string} 描述， 可为空
 	 */
-	this.Register = function(eventId, cb, target, desc){
+	this.on = function(eventId, cb, target, desc){
 		// Assert(cb);
 		let evt;
 		if(eventId in this.m_events)
@@ -60,7 +60,7 @@ var EventDispatcher = function(){
 	 * 反注册
 	 * @eventId {any} 事件序号， 任何值
 	 */
-	this.unRegister = function(eventId, cb,target){
+	this.off = function(eventId, cb,target){
 		let evt = this.m_events[eventId];
 		if(evt){
 			for (let i = 0; i < evt.length;) {
@@ -83,7 +83,7 @@ var EventDispatcher = function(){
 	 * 反注册全部某种事件
 	 * @eventId {any} 事件序号， 任何值
 	 */
-	this.unResisterAll = function(eventId){
+	this.offAll = function(eventId){
 		this.m_events[eventId] = null;
 	}
 

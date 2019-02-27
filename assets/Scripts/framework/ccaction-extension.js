@@ -1,4 +1,4 @@
-"use strict;"
+"use strict";
 
 
 cc.LabelCounter = cc.ActionInterval.extend({

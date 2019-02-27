@@ -176,7 +176,7 @@ const UIKiller = {
                         child.name = name;
                     }
                 }
-
+                
                 if (target[name]) {
                     cc.warn(`${target.name}.${name} property is already exists`);
                     return;
